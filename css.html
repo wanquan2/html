@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css样式</title>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+</head>
+<body>
+	<div class="main">
+		<table class="table">
+			<tr>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+		</table>
+		<div class="filter">
+			<img class="blur" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4279748171,1275240418&fm=26&gp=0.jpg">
+			<img class="brightness" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4279748171,1275240418&fm=26&gp=0.jpg">
+			<img class="contrast" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4279748171,1275240418&fm=26&gp=0.jpg">
+			<img class="shadow" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4279748171,1275240418&fm=26&gp=0.jpg">
+			<img class="grayscale" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4279748171,1275240418&fm=26&gp=0.jpg">
+			<img class="rotate" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4279748171,1275240418&fm=26&gp=0.jpg">
+			<img class="invart" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4279748171,1275240418&fm=26&gp=0.jpg">
+			<img class="saturate" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4279748171,1275240418&fm=26&gp=0.jpg">
+			<img class="sepia" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4279748171,1275240418&fm=26&gp=0.jpg">
+		</div>
+		<div class="perspective">
+			<div class="perspective-child"></div>
+		</div>
+		<div class="resize"></div>
+		<div class="transform">
+			<div class="matrix">matrix</div>
+			<div class="matrix3d">matrix3d</div>
+		</div>
+
+		<p>展示给定的数据范围：</p>
+		<meter value="2" min="0" max="10">2 out of 10</meter><br>
+		<meter value="0.6">60%</meter>
+
+		下载进度：
+		<progress value="22" max="100"></progress>
+
+		显示拼音
+		<ruby>
+		  汉 <rp>(</rp><rt>Han</rt><rp>)</rp>
+		  字 <rp>(</rp><rt>zi</rt><rp>)</rp>
+		</ruby>
+
+		标记不再正确的文本：
+		<p><s>My car is blue.</s></p>
+		<p>My new car is silver.</p>
+
+		给文本添加删除线：
+		<p>Version 2.0 is <strike>not yet available!</strike> now available!</p>
+
+		带有两个源文件的音频播放器。浏览器需要选择它所支持的源文件（如果都支持则任选一个）：
+		<audio controls>
+		    <source src="horse.ogg" type="audio/ogg">
+		    <source src="horse.mp3" type="audio/mpeg">
+		    您的浏览器不支持 audio 元素。
+		</audio>
+
+		将计算结果显示在 <output> 元素中：
+		<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+		  <input type="range" id="a" value="50">100
+		  +<input type="number" id="b" value="50">
+		  =<output name="x" for="a b"></output>
+		
+	</div>
+</body>
+</html>

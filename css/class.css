@@ -1,0 +1,135 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+.box,.box1,.box2,.box3{
+	width: 800px;
+	margin: 50px auto;
+}
+div p{
+	padding: 5px 0;
+}
+
+.box2 > p{
+	color: #f00;
+}
+
+.box+.box1 p{/*box1紧挨box*/
+	background: #eee;
+}
+
+.box2 p[attr]{/*[target] 带有某种属性的元素*/
+	color: #1de623;
+}
+.box2 p[attr=me]{/*[target=value] 带有某种属性且属性值符合的元素*/
+	color: #0c88c3;
+}
+.box2 p[title~=name]{
+	color: #c3a40c;
+}
+
+a:link{/*link  未访问过的连接*/
+	color: #f00;
+}
+a:visited{/*visited 访问过的连接*/
+	color: #1de623;
+}
+a:active{/*active 选择激活(点击时的样式) 若有hover是需放在hover之后才有效果*/
+	color: #c3a40c;
+}
+
+input{
+	outline: none;
+	padding: 5px 10px;
+}
+input:focus{
+	border: 1px solid #f00;
+}
+
+h6{
+	padding: 5px 0;
+}
+.box h6:first-letter{/*first-letter 选择元素的第一个文本*/
+	color: #f00;
+	font-size: 18px;
+	padding-right: 5px;
+}
+.box h6:first-line{/*first-line 选择元素的第一行*/
+	color: #f14b4b;
+}
+
+/*.box p:first-child{
+	color: #2c07f7;
+}*/
+.box:before{/*before 在元素之前插入内容 样式只对插入内容有效*/
+	content: '插队第一个';
+	color:#1000ff;
+	font-size: 16px;
+	font-weight: bold;
+}
+.box:after{/*after 在元素最后插入内容 样式只对插入内容有效*/
+	content: '我是最后的';
+	color:#1000ff;
+	font-size: 16px;
+	font-weight: bold;
+}
+p:empty{/*empty 指定空元素的样式*/
+  background:#f00;
+}
+
+input[type='text']:enabled{/*enabled 设置启用input的样式  disabled禁用*/
+	color: #f00;
+}
+input[type='text']:disabled{/*disabled 设置禁用元素样式*/
+	color: #085cf5;
+}
+input[type='text']:read-only{/*read-only 设置只读元素样式*/
+	color: #f30ae1;
+}
+input[type='radio']:checked{/*checked 设置选中元素样式*/
+	width: 30px;
+	height: 30px;
+}
+input[type='checkbox']:checked{
+	width: 30px;
+	height: 30px;
+}
+input[type='number']{
+	width: 180px;
+	padding: 5px;
+}
+input[type='number']:out-of-range{/*out-of-range 设置超出范围之外的样式*/
+	color: #f00;
+}
+input[type='number']:in-range{/*in-range 设置	范围之外的样式*/
+	color: #1de623;
+}
+select{
+	width: 200px;
+	padding: 5px;
+	outline: none;
+}
+
+
+.box3 div{
+	padding-top: 30px;
+}
+.box3 a{
+	padding: 10px;
+}
+.box3 div:nth-child(2),.box3 div:nth-child(3){
+	display: none;
+}
+.box3 div:target{/*target  选择当前活动的元素（包含该锚名称的点击的URL）*/
+	background: #f00;
+	display: block;	
+}
+
+
+
+
+
+

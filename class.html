@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>选择器</title>
+	<link rel="stylesheet" type="text/css" href="css/class.css">
+</head>
+<body>
+	<div class="box">
+		<p>wewewew</p>
+		<p>wewewew</p>
+		<p>wewewew</p>
+		<p>wewewew</p>
+		<p>wewewew</p>
+		<p>wewewew</p>
+		<p>wewewew</p>
+		<p>wewewew</p>
+		<h6><span>我是特殊的</span><span>span标签</span></h6>
+		<h6><span>他是</span><span>不特殊的标签不特殊的标签不特殊的标签不特殊的标签不特殊的标签不特殊的特殊的标签不特殊的标签不特殊的标签不特殊的标签不特殊的标签不特殊的标签不特殊的标签</span></h6>
+		<p><a href="https://www.baidu.com/">百度</a></p>
+		<p><a href="#">淘宝</a></p>
+		<p></p>
+	</div>
+
+	<div class="box1">
+		<p>我是紧挨div的p元素</p>
+	</div>
+
+	<div class="box2">
+		<p><span>1</span>qqqqqqqqqqqqqqqqq</p>
+		<p attr="sds"><span>2</span>qqqqqqqqqqqqqqqqq</p>
+		<p attr="me"><span>3</span>qqqqqqqqqqqqqqqqq</p>
+		<p title="name"><span>4</span>qqqqqqqqqqqqqqqqq</p>
+		<p><a href="www.baidu.com">百度</a></p>
+		<p><a href="www.baidu.com">淘宝</a></p>
+		<p><input type="text" name="" placeholder="请输入"></p>
+		<p><input type="text" name="" placeholder="请输入"></p>
+		<p><input type="text" name="" placeholder="禁用" disabled="true" value="禁用"></p>
+		<p><input type="text" name="" placeholder="只读" readonly="true" value="只读"></p>
+		<p><input type="number" name="" min="10" max="100" placeholder="数字输入"></p>
+		<p>
+			<input type="radio" name="">
+			<input type="radio" name="">
+			<input type="checkbox" name="">
+			<input type="checkbox" name="">
+		</p>
+		<p><select><option>张三</option><option>李四</option></select></p>
+		<p><select><option>中国</option><option>美国</option></select></p>
+	</div>
+
+	<div class="box3">
+		<div><a href="#tagrt1">锚链接</a><a href="#tagrt2">锚链接</a></div>
+		<div id="tagrt1">连接到我这儿1</div>
+		<div id="tagrt2">连接到我这儿2</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function fun(n,o) {
+	  console.log('第一层n=' + n + ' o=' + o);
+	  return {
+	    fun2:function(m){
+	    	console.log('第二层n=' + n + ' o=' + o + ' m=' + m);
+	      return fun(m,n);
+	    },
+	    geto(){
+	    	return o;
+	    },
+	    getn(){
+	    	return n;
+	    },
+	    getm(){
+	    	return m;
+	    }
+	  };
+	}
+// var a = fun(0); 
+// 		a.fun2(1);
+// 		a.fun2(2);  
+// 		a.fun2(3);//undefined,?,?,?
+// console.log('##############################################################################')
+
+// var b = fun(0).fun2(1).fun2(2).fun2(3);//undefined,?,?,?
+// console.log('##############################################################################')
+
+// var c = fun(0).fun2(1);
+// 		console.log('----------------------')
+// 	  c.fun2(2);
+// 	  console.log('----------------------')
+// 	  c.fun2(3);//undefined,?,?,?
+
+var c = fun(0).fun2(1).fun2(3);  c.fun2(3);  c.fun2(5);//undefined,?,?,?
+
+// console.log('##############################################################################')
+function add(a,b){
+	var b = b;
+	console.log('b=' + b);
+	return {
+		adds:function(c){
+			return add(c,a)
+		},
+		geta:function(){
+			return a;
+		},
+		getb:function(){
+			return b;
+		}
+	}
+}
+
+// var adds = add();
+// adds();
+// adds();
+// adds();
+</script>
+</html>

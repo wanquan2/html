@@ -1,0 +1,139 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	width: 800px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+.box{
+	position: relative;
+	height: 120px;
+	background: #eee;
+}
+.item{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 120px;
+	height: 120px;
+	line-height: 120px;
+	color: #fff;
+	text-align: center;
+	background: #f00;
+	animation: changeBack 4s infinite;
+	animation-direction:alternate;/*animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit;
+																//反向播动画*/
+	backface-visibility: hidden;
+	animation-fill-mode: forwards;/*none|forwards|backwards|both|initial|inherit;
+																//animation-fill-mode 属性规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。*/
+	animation-timing-function: linear;/*设置动画如何完成一个周期 如匀速、开始快速结束慢速等*/
+}
+.item:hover{
+	animation-play-state: paused; /*animation-play-state: paused|running 指定动画暂停还是播放*/
+}
+
+/*
+	** @keyframes 关键帧 创建一个动画
+	*  语法： @keyframes animationname {keyframes-selector {css-styles;}}
+					 animationname 定义的名称 必填
+					 keyframes-selector 动画持续时间，合法值：0%~100%、form(相当于0%)、to(相当于100%)
+					 css-styles css样式 必须
+*/
+@keyframes changeBack{
+	from{
+		background: #f00;
+		margin-left: 0;
+	}
+	50%{
+		border-radius: 50%;
+	}
+	to{
+		background: #06d7ec;
+		border-radius: 0;
+		margin-left: 680px;
+	}
+}
+
+.run{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 50px auto;
+	background: #f00;
+	text-align: center;
+	line-height: 100px;
+	color: #fff;
+	cursor: pointer;
+	overflow: hidden;
+}
+.run:active{
+	animation: lian .1s infinite;
+}
+@keyframes lian{
+	0%{
+		background: #00ffa1;
+	}
+	100%{
+		background: #004eff;
+	}
+}
+
+/*css 函数*/
+.funtion{
+	width: 800px;
+	height: 100px;
+	margin:50px auto;
+	background: #eee;
+	overflow: hidden;
+}
+.funtion div:nth-child(1){
+	width: calc(100% - 700px);/*calc 计算方法，支持 + - * / 运算符必须空格隔开*/
+	height:100px;
+	background: #f00;
+	transition: width 2s;
+	transition-timing-function: cubic-bezier(0,1,0.9,1);/*cubic-bezier(p0,p1,p2,p3)*/
+																											/*贝塞尔曲线，用语定义执行速度如先快后慢*/
+																											/*每个点取值都是0~1,值越大表示速度越快*/
+																											/*可用于transition-timing-function和animation-timing-function*/
+}
+.funtion div:nth-child(1):hover{
+	width:100%;
+}
+
+.var{
+	width: 800px;
+	margin: 50px auto;
+	--one-color: #f00;/*--开头定义变量，调用如color:var(变量名)*/
+	--two-color:#1de623;
+}
+.var p{
+	margin: 0;
+	padding: 15px 10px;
+	background: #000;
+	border-bottom: 1px solid #fff;
+}
+.var p:first-child{
+	background: var(--two-color);/*var 调用变量属性*/
+	color: hsl(240,100%,50%);/*hsl 使用色相(0-360)、饱和度(0%-100%)、亮度(0%-100%)设置颜色*/
+}
+.var p:nth-child(2){
+	color: hsla(290,100%,50%,.3);/*hsl 使用色相(0-360)、饱和度(0%-100%)、亮度(0%-100%)、透明度(0-1)设置颜色*/
+}
+.var p:nth-child(3){
+	color: rgb(290,0,100);/*rgb 使用R(红色0-255)、G(绿色0-255)、B(蓝色0-255)设置颜色*/
+}
+.var p:last-child{
+	background: var(--one-color);
+	color: rgba(7,23,220,.5);/*使用R(红色0-255)、G(绿色0-255)、B(蓝色0-255)、透明度(0-1)设置颜色*/
+}
+
+
+
+
+
+
+
+
+

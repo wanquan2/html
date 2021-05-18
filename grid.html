@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr 与 grid</title>
+    <style>
+        html{
+            --hight:50px;
+            --color:attr(data-color);
+        }
+        .box{
+            width: 600px;
+            margin: 50px     auto;
+            background: #f00;
+            display: grid; 
+            grid-template-columns: 100px 100px minmax(100px,120px) auto;
+            grid-template-rows: repeat(4,var(--hight));
+            grid-gap: 1px 1px;
+        }
+        .box div{
+            text-align: center;
+            background: #eeeeee;
+            line-height: var(--hight);
+            cursor: pointer;
+        }
+        .box div:hover{
+            background: rgb(196, 227, 241);
+            color: #ffffff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div data-color="#f90909">1</div>
+    <div data-color="#093df9">2</div>
+    <div data-color="#09f948">3</div>
+    <div data-color="#eaf909">4</div>
+    <div data-color="#f909e7">5</div>
+    <div data-color="#f99909">6</div>
+    <div data-color="#f99909">7</div>
+    <div data-color="#f99909">8</div>
+    <div data-color="#f99909">9</div>
+    <div data-color="#f99909">10</div>
+    <div data-color="#f99909">11</div>
+    <div data-color="#f99909">12</div>
+    <div data-color="#f99909">13</div>
+    <div data-color="#f99909">14</div>
+    <div data-color="#f99909">15</div>
+    <div data-color="#f99909">16</div>
+</div>
+</body>
+</html>

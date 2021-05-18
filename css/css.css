@@ -1,0 +1,129 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.main{
+	width: 800px;
+	margin: 0 auto;
+}
+.table {
+	border-collapse:collapse;/*如果可能，合并为单一边框(单元格之间没有间距)*/
+}
+.table td{
+	width: 150px;
+	border: 1px solid #666;
+	text-align: center;
+}
+
+/**
+	滤镜filter:
+	none 没有效果
+	blur(px) 图像设置高斯模糊,值越大越模糊
+	brightness(%) 给图像设置线性乘法，100%时没效果，小于100更暗，大于100更亮
+	contrast(%) 给图像设置对比度
+	drop-shadow(h-shadow v-shadow blur spread color) 设置阴影效果
+	grascale(%) 设置图像灰度
+	hae-routate(deg) 给图像应用色相旋转
+	invert(%) 反转输入图像
+	opacity(%) 设置透明度
+	saturate(%) 装换图像饱和度
+	sepia(%) 将图像装换为黑色
+	url() URL函数接受一个XML文件，该文件设置了 一个SVG滤镜，且可以包含一个锚点来指定一个具体的滤镜元素
+
+*/
+.filter{
+	margin-top: 80px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+}
+.filter img{
+	width: 150px;
+	height: 150px;
+	margin: 5px;
+	flex-grow: 1;
+}
+.blur{
+	filter: blur(3px);
+}
+.brightness{
+	filter: brightness(300%);
+}
+.contrast{
+	filter: contrast(40%);
+}
+.shadow{
+	-webkit-filter: drop-shadow(3px 5px 1px red); /* Chrome, Safari, Opera */
+  filter: drop-shadow(8px 8px 10px red);
+}
+.grayscale{
+	filter: grayscale(100%);
+}
+.rotate{
+	animation: rotate 4s infinite;
+	animation-direction:alternate;
+}
+@keyframes rotate{
+	to{
+		filter: hue-rotate(0deg);
+	}
+	from{
+		filter: hue-rotate(360deg);
+	}
+}
+.invart{
+	filter: invert(90%);
+}
+.saturate{
+	filter: saturate(30%);
+}
+.sepia{
+	filter: sepia(130%);
+}
+
+.perspective{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	-webkit-perspective:180; /* Safari and Chrome */
+	perspective: 180;
+	border: 1px solid #f00;
+}
+.perspective-child{
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	background: blue;
+	transform: rotateX(45deg);
+}
+
+.resize{
+	margin-top: 50px;
+	width: 200px;
+	height: 200px;
+	background: #f00;
+	resize: both;/*resize 设置盒子缩放,需配合overflow: auto使用*/
+	overflow: auto;
+}
+
+.transform{
+	margin: 20px 0;
+	display: flex;
+}
+.transform div{
+	margin: 0 20px;
+	width: 150px;
+	height: 100px;
+	line-height: 100px;
+	color: #fff;
+	text-align: center;
+	flex-direction: row;
+}
+.matrix{
+	background: #f00;
+	transform: matrix(.5,0,1,.6,7,7);
+}
+.matrix3d{
+	background: blue;
+	transform: matrix3d(1,-1,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
+}

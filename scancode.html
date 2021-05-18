@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中企危服-H5</title>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <style>
+        .box{
+            text-align: center;
+            font-size: 12px;
+            padding: 30px 0;
+        }
+        .box span{
+            cursor: pointer;
+            color: brown;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    中企危服：<span>请扫码</span>
+</div>
+</body>
+<script>
+window.onload = function(){
+    var smallPro = false;
+    var em = document.getElementById('box');
+    //判断小程序环境
+    wx.miniProgram.getEnv(function(res) {
+        console.log(res.miniprogram) // true
+        if(res.miniprogram){
+            smallPro=true;
+        }else{ 
+            smallPro=false;
+        }
+    }); 
+    
+    em.onclick = function(){
+        if(smallPro){ //小程序环境
+            // wx.scanQRCode({
+            //     needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+            //     scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+            //     success: function (res) {
+            //         var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+            //         alert(result)
+            //     },
+            //     fail: function(e){
+            //         debugger
+            //         alert(e)
+            //     }
+            // });
+            wx.miniProgram.navigateTo({
+                url:'/pages/scancode/index?id=1',//跳转回小程序的页面
+                    success: function(){
+                        debugger
+                        //alert('跳转小程序成功')
+                    },
+                    fail: function(){
+                        //console.log('跳转回小程序的页面fail');
+                    }
+                });
+             } 
+        }
+    }
+
+ 
+</script>
+</html>
