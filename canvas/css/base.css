@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 1002px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.box canvas{
+    border: 1px solid #eae7e7;
+}
+.canvasbox{
+    display: none;
+}
+.title{
+    background-color: #eae7e7;
+    border: 1px solid #eae7e7;
+    overflow: hidden;
+}
+.title span{
+    padding: 10px 30px;
+    color: #1d91e4;
+    display: inline-block;
+    cursor: pointer;
+}
